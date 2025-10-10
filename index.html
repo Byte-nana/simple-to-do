@@ -19,10 +19,44 @@
       src="https://kit.fontawesome.com/a5f079a000.js"
       crossorigin="anonymous"
     ></script>
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap"
+      rel="stylesheet"
+    />
     <!-- CSS -->
     <link rel="stylesheet" href="./css/style.css" />
     <!-- Javascript -->
     <script type="module" src="./src/main.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <section class="list">
+      <header>
+        <h1 class="list__title">Your To Do</h1>
+      </header>
+      <main>
+        <form class="list__form" action="#">
+          <label class="list__label" for="list__input">Add new task </label>
+          <input id="list__input" type="text" />
+          <button type="submit" aria-label="button for adding the to do list">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </form>
+        <ul>
+          <li>
+            <input type="checkbox" />
+            <span>Finish HTML and CSS</span>
+            <button
+              type="button"
+              aria-label="button for deleting the to do list"
+            >
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </li>
+        </ul>
+      </main>
+    </section>
+  </body>
 </html>

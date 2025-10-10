@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Red Hat Text', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('/image/bg-main.jpg') center / cover no-repeat;
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+.list {
+  width: 80%;
+  padding: 2rem 1rem;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.1px);
+  -webkit-backdrop-filter: blur(9.1px);
+  border: 1px solid rgba(255, 255, 255, 0.51);
+}
+.list__form {
+  width: 100%;
+  position: relative;
+}
+.list__title {
+  font-weight: 600;
+}
+.list__label {
+  position: absolute;
+  color: #555;
+}
+#list__input {
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+}
