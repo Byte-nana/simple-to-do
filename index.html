@@ -23,7 +23,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
     <!-- CSS -->
@@ -32,15 +32,19 @@
     <script type="module" src="./src/main.js" defer></script>
   </head>
   <body>
-    <section class="list">
+    <section class="list glass">
       <header>
         <h1 class="list__title">Your To Do</h1>
       </header>
       <main>
         <form class="list__form" action="#">
-          <label class="list__label" for="list__input">Add new task </label>
-          <input id="list__input" type="text" />
-          <button type="submit" aria-label="button for adding the to do list">
+          <label class="form__label" for="form__input">Add new task </label>
+          <input id="form__input" type="text" />
+          <button
+            class="form__btn glass"
+            type="submit"
+            aria-label="button for adding the to do list"
+          >
             <i class="fa-solid fa-plus"></i>
           </button>
         </form>
