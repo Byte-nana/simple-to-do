@@ -1,3 +1,7 @@
+:root {
+  --accent-color: #9bd4c5;
+  --border-color: rgba(255, 255, 255, 0.51);
+}
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +14,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url('') center / cover no-repeat;
+  background-image: image-set(
+    url('/image/bg-mobile.webp') type('image/webp'),
+    url('/image/bg-mobile.jpg') type('image/webp')
+  );
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 button {
@@ -26,21 +36,81 @@ ul {
 /* common */
 .glass {
   background: rgba(255, 255, 255, 0.14);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(9.1px);
-  -webkit-backdrop-filter: blur(9.1px);
-  border: 1px solid rgba(255, 255, 255, 0.51);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border-color);
 }
 .list {
   width: 80%;
-  padding: 2rem 1rem;
+  padding: 1.5rem 1rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1);
 }
 /* header */
 .list__title {
   font-weight: 600;
 }
 /* main */
+.list__main {
+  margin-top: 1rem;
+}
+.main__filter {
+  display: flex;
+  padding-left: 8px;
+  gap: 0.8rem;
+  font-size: 0.8rem;
+}
+.filter__item {
+  padding: 0.2rem 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.main__items {
+  height: 300px;
+  margin-block: 0.5rem;
+  padding: 0.8rem 0.5rem;
+  border-radius: 16px;
+}
+.item__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.item__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.item__row input[type='checkbox'] {
+  appearance: none;
+  position: relative;
+  width: 1.2rem;
+  height: 1.2rem;
+  background: transparent;
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+  transition: all 250ms ease;
+}
+.item__row input[type='checkbox']:checked {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+.item__row input[type='checkbox']:checked::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 0px;
+  width: 4px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.item__row input[type='checkbox']:checked + .item__text {
+  text-decoration: line-through;
+}
 .list__form {
   width: 100%;
   position: relative;
@@ -58,7 +128,8 @@ ul {
 #form__input {
   width: 80%;
   border: none;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+  border-bottom: 2px solid var(--border-color);
+
   background: transparent;
   font-size: 1.2rem;
 }
