@@ -92,7 +92,7 @@ ul {
   user-select: none;
   cursor: pointer;
 }
-#item__checkbox {
+.item__checkbox {
   appearance: none;
   position: relative;
   flex-shrink: 0;
@@ -104,11 +104,11 @@ ul {
   transition: all 250ms ease;
   cursor: pointer;
 }
-#item__checkbox:checked {
+.item__checkbox:checked {
   background-color: var(--accent-color);
   border-color: var(--accent-color);
 }
-#item__checkbox:checked::after {
+.item__checkbox:checked::after {
   content: '';
   position: absolute;
   left: 4px;
@@ -119,7 +119,7 @@ ul {
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
-#item__checkbox:checked + .item__text {
+.item__checkbox:checked + .item__text {
   text-decoration: line-through;
   text-decoration-color: var(--accent-color);
 }

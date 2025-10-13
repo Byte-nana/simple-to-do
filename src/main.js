@@ -26,8 +26,8 @@ function createItem(text) {
   li.setAttribute('class', 'item__row');
   li.setAttribute('data-id', id);
   li.innerHTML = `
-    <label for="item__checkbox" class="item__label">
-      <input id="item__checkbox" type="checkbox"/>
+    <label for="${id}" class="item__label">
+      <input id="${id}" class="item__checkbox" type="checkbox" />
       <span class="item__text">${text}</span>
     </label>
     <button class="item__btn" type="button" aria-label="button for deleting the to do list">
@@ -36,4 +36,5 @@ function createItem(text) {
   `;
 
   ul.appendChild(li);
+  ul.scrollTop = ul.scrollHeight;
 }

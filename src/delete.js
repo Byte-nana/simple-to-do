@@ -1,7 +1,6 @@
 'use strict';
 
 //delete item
-
 ul.addEventListener('click', (e) => {
   let data = e.target.dataset.id;
   if (!data) return;
