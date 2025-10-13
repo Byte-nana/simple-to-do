@@ -42,6 +42,7 @@ ul {
 }
 .list {
   width: 80%;
+  margin-block: 2rem;
   padding: 1.5rem 1rem;
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
@@ -155,6 +156,7 @@ ul {
 #form__input:focus-visible {
   outline: none;
 }
+
 #form__input:focus-visible ~ .form__label {
   visibility: hidden;
 }
