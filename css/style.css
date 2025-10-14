@@ -40,14 +40,22 @@ ul {
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid var(--border-color);
 }
+/* list card */
 .list {
   width: 80%;
+  max-width: 450px;
   margin-block: 2rem;
-  padding: 1.5rem 1rem;
+  padding: clamp(1.5rem, 5vw, 2.5rem) clamp(1rem, 5vw, 2rem);
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.5),
     inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+  container-type: inline-size;
+  container-name: card;
+}
+/* header */
+.list__title {
+  font-size: clamp(2rem, 5vw, 2.8rem);
 }
 /* main */
 .list__main {
@@ -57,10 +65,9 @@ ul {
   display: flex;
   gap: 0.8rem;
   padding-left: 0.5rem;
-  font-size: 0.8rem;
 }
 .filter__item {
-  padding: 0.2rem 0.5rem;
+  padding: clamp(0.2rem, 1vw, 0.5rem) clamp(0.5rem, 2vw, 0.8rem);
   border-radius: 8px;
   cursor: pointer;
   transition: all 300ms ease;
@@ -69,11 +76,14 @@ ul {
   border: 1px solid var(--accent-color);
   transform: translateY(2px);
 }
+.filter__item button {
+  font-size: clamp(0.8rem, 2vw, 1rem);
+}
 .main__items {
-  height: 300px;
-  margin-block: 0.5rem;
-  padding: 0.8rem 0.5rem;
-  padding-right: 0.8rem;
+  height: clamp(300px, 60vw, 350px);
+  margin-block: clamp(0.5rem, 5vw, 1rem);
+  padding: clamp(0.8rem, 2vw, 1rem) clamp(0.5rem, 2vw, 1rem);
+  padding-right: clamp(0.8rem, 5vw, 1.1rem);
   border-radius: 16px;
   overflow-y: scroll;
 }
@@ -81,8 +91,8 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.5rem;
-  gap: 0.5rem;
+  margin-bottom: clamp(0.5rem, 2vw, 1rem);
+  gap: clamp(0.5rem, 2vw, 0.8rem);
 }
 .item__label {
   display: flex;
@@ -96,8 +106,8 @@ ul {
   appearance: none;
   position: relative;
   flex-shrink: 0;
-  width: 1.2rem;
-  height: 1.2rem;
+  width: clamp(1.2rem, 2vw, 1.5rem);
+  height: clamp(1.2rem, 2vw, 1.5rem);
   background: transparent;
   border: 2px solid var(--border-color);
   border-radius: 4px;
@@ -123,6 +133,9 @@ ul {
   text-decoration: line-through;
   text-decoration-color: var(--accent-color);
 }
+.item__text {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+}
 .item__btn {
   transition: all 300ms ease;
 }
@@ -143,7 +156,7 @@ ul {
   left: 8px;
   bottom: 4px;
   color: #444;
-  font-size: 0.8rem;
+  font-size: clamp(0.8rem, 2vw, 1rem);
   cursor: text;
 }
 #form__input {
@@ -152,24 +165,24 @@ ul {
   border: none;
   border-bottom: 2px solid var(--border-color);
   background: transparent;
-  font-size: 1.2rem;
+  font-size: clamp(1.2rem, 2vw, 1.7rem);
 }
 #form__input:focus-visible {
   outline: none;
 }
-
 #form__input:focus-visible ~ .form__label {
   visibility: hidden;
 }
 .form__btn {
-  width: 32px;
-  height: 32px;
+  width: clamp(2rem, 5vw, 2.5rem);
+  height: clamp(2rem, 5vw, 2.5rem);
   display: flex;
   justify-content: center;
   align-items: center;
   border: 1px solid transparent;
   border-radius: 8px;
   transition: all 300ms ease;
+  font-size: clamp(1rem, 2vw, 1.5rem);
 }
 .form__btn:active {
   transform: translateY(2px);
