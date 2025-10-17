@@ -121,10 +121,10 @@ ul {
 .item__checkbox:checked::after {
   content: '';
   position: absolute;
-  left: 4px;
-  top: 0px;
-  width: 4px;
-  height: 10px;
+  left: clamp(4px, 1vw, 5px);
+  top: clamp(0px, 2vw + 0.5rem, -2px);
+  width: clamp(4px, 2vw, 6px);
+  height: clamp(10px, 1vw, 12px);
   border: solid #fff;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
