@@ -29,8 +29,9 @@
     <!-- CSS -->
     <link rel="stylesheet" href="./css/style.css" />
     <!-- Javascript -->
-    <script src="./src/main.js" defer></script>
-    <script src="./src/delete.js" defer></script>
+    <!-- <script src="./src/main.js" defer></script> -->
+    <script src="./src/practice.js" defer></script>
+    <script src="./src/filter.js" defer></script>
   </head>
   <body>
     <section class="list glass">
@@ -40,13 +41,13 @@
       <main class="list__main">
         <ul class="main__filter">
           <li class="filter__item glass">
-            <button>All</button>
+            <button data-category="all">All</button>
           </li>
           <li class="filter__item glass">
-            <button>Active</button>
+            <button data-category="active">Active</button>
           </li>
           <li class="filter__item glass">
-            <button>Completed</button>
+            <button data-category="completed">Completed</button>
           </li>
         </ul>
         <ul class="main__items glass"></ul>
