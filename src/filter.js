@@ -6,41 +6,22 @@
 // active
 
 const categories = document.querySelector('.main__filter');
+
 categories.addEventListener('click', (e) => {
   const filter = e.target.dataset.category;
   if (filter == null) return;
-
-  if (filter == 'all') {
-    return todos.forEach((todo) => {
-      let id = todo.id;
-      const li = document.querySelector(`li[data-id="${id}"]`);
-      if (todo.completed) {
-        li.style.display = 'flex';
-      } else {
-        li.style.display = 'flex';
-      }
-    });
-  }
-  if (filter == 'active') {
-    return todos.forEach((todo) => {
-      let id = todo.id;
-      const li = document.querySelector(`li[data-id="${id}"]`);
-      if (todo.completed) {
-        li.style.display = 'flex';
-      } else {
-        li.style.display = 'none';
-      }
-    });
-  }
-  if (filter == 'completed') {
-    return todos.forEach((todo) => {
-      let id = todo.id;
-      const li = document.querySelector(`li[data-id="${id}"]`);
-      if (!todo.completed) {
-        li.style.display = 'flex';
-      } else {
-        li.style.display = 'none';
-      }
-    });
-  }
+  filterTodo(filter);
 });
+
+function filterTodo(filter) {
+  todos.forEach((todo) => {
+    const li = document.querySelector(`li[data-id=${todo.id}]`);
+    if (!li) return;
+    const show =
+      filter === 'all' ||
+      (filter === 'active' && !todo.completed) ||
+      (filter === 'completed' && todo.completed);
+
+    li.style.display = show ? 'flex' : 'none';
+  });
+}
