@@ -4,7 +4,7 @@ function onDelete(target) {
   let id = target.dataset.id;
   if (!id) return;
 
-  const deleteItem = document.querySelector(`li[data-delete="${id}"]`);
+  const deleteItem = document.querySelector(`li[data-id="${id}"]`);
   deleteItem.remove();
   todos = todos.filter((todo) => todo.id != id);
 }
