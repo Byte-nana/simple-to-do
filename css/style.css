@@ -73,6 +73,9 @@ ul {
   cursor: pointer;
   transition: all 300ms ease;
 }
+.item--selected {
+  background-color: var(--accent-color);
+}
 .filter__item:active {
   border: 1px solid var(--accent-color);
   transform: translateY(2px);

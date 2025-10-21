@@ -1,33 +1,43 @@
 'use strict';
 
-//All button -> 전체 다 보여줌
-//Active -> checked 안된 아이템 (completed: false)
-//Completed -> checked된 아이템 (complted: true)
-
-//completed가 true이면 안보여주기 completed가 false이면 보여주기
-
 const filterBtns = document.querySelector('.main__filter');
 
-filterBtns.addEventListener('click', (e) => {
-  const li = document.querySelectorAll('.item__row');
-  li.forEach((li) => (li.style.display = 'none'));
+function updateVisibility(todoStatus) {
+  const item = document.querySelectorAll('.item__row');
+  item.forEach((li) => (li.style.display = 'none'));
 
-  const filter = e.target.dataset.category;
-  if (filter === 'active') {
-    let activeTodos = todos.filter((todo) => todo.completed === false);
-    activeTodos.forEach((todo) => {
-      const activeList = document.querySelectorAll(`li[data-id="${todo.id}"]`);
-      activeList.forEach((li) => (li.style.display = 'flex'));
-    });
-  } else if (filter === 'completed') {
-    let completedTodos = todos.filter((todo) => todo.completed === true);
-    completedTodos.forEach((todo) => {
-      const completedList = document.querySelectorAll(
-        `li[data-id="${todo.id}"]`
-      );
-      completedList.forEach((li) => (li.style.display = 'flex'));
-    });
-  } else {
-    li.forEach((li) => (li.style.display = 'flex'));
+  todoStatus.forEach((todo) => {
+    const li = document.querySelector(`li[data-id="${todo.id}"]`);
+    li.style.display = 'flex';
+  });
+}
+
+function onFilter(filter) {
+  let todoStatus;
+  switch (filter) {
+    case 'active':
+      todoStatus = todos.filter((todo) => todo.completed === false);
+      break;
+    case 'completed':
+      todoStatus = todos.filter((todo) => todo.completed === true);
+      break;
+    case 'all':
+      todoStatus = todos;
+      break;
   }
+
+  updateVisibility(todoStatus);
+}
+
+function handleActive(target) {
+  const active = document.querySelector('.item--selected');
+  active.classList.remove('item--selected');
+  target.parentElement.classList.add('item--selected');
+}
+filterBtns.addEventListener('click', (e) => {
+  const filter = e.target.dataset.category;
+  if (!filter) return;
+
+  handleActive(e.target);
+  onFilter(filter);
 });
